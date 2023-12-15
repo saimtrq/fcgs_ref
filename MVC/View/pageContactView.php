@@ -15,24 +15,7 @@
     <?php
     if (isset($_GET['succes_contact'])) {
         $erreur = htmlspecialchars($_GET['succes_contact']);
-        switch ($erreur) {
-            case 'mail_envoyer':
-                ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>L'email a été envoyé avec succes</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                <?php
-                break;
-                case 'erreur_vide':
-                    ?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Tout les champs n'ont pas été remplis</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <?php
-                    break;
-        }
+        verif_contact($erreur);
     }
 
     ?>
@@ -87,7 +70,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-<?php require('../../extras/preconf/footer.php'); ?>
+    <?php require('../../extras/preconf/footer.php'); ?>
 </body>
 
 </html>
